@@ -2,216 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TommyFR</title>
-  <meta name="description" content="TommyFR - websites and Discord servers." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="enter-screen" class="enter-screen">
-    <div class="enter-backdrop"></div>
-    <div class="enter-card">
-      <div class="enter-logo-wrap">
-        <div class="enter-logo-glow"></div>
-        <img src="assets/logo.png" alt="TommyFR logo" class="enter-logo" />
-      </div>
-      <span class="enter-eyebrow">TOMMYFR</span>
-      <h1>Click to enter</h1>
-      <p>Websites and Discord servers.</p>
-      <button id="enter-btn" class="enter-btn">Enter</button>
-    </div>
+
+<div id="enter">
+  <h1>TOMMYFR</h1>
+  <button onclick="enterSite()">Enter</button>
+</div>
+
+<div id="site">
+
+<header>
+  <h2>TOMMYFR</h2>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#tools">Tools</a>
+    <a href="#links">Links</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span>DISCORD BOTS / SERVER SETUP</span>
+
+  <h1>I build Discord<br>servers & bots.</h1>
+
+  <p>
+    I make custom Discord bots and set up servers that actually feel organized.
+    Clean channels, proper roles, working systems, and everything built around how your server runs.
+  </p>
+
+  <div class="buttons">
+    <a href="https://discord.gg/D5bRgVkEck" target="_blank">Join My Server</a>
+    <a href="https://portfolio.tommyfr.xyz">View Portfolio</a>
+  </div>
+</section>
+
+<section class="features">
+  <div>
+    <h3>Server Setup</h3>
+    <p>Channels, roles, permissions, and structure done right.</p>
   </div>
 
-  <div class="noise"></div>
-  <div class="bg-grid"></div>
-  <div class="orb orb-a"></div>
-  <div class="orb orb-b"></div>
+  <div>
+    <h3>Custom Bots</h3>
+    <p>Tickets, moderation, panels, and useful systems.</p>
+  </div>
 
-  <audio id="site-audio"></audio>
+  <div>
+    <h3>Clean Design</h3>
+    <p>No messy layouts. Everything simple and organized.</p>
+  </div>
+</section>
 
-  <aside class="music-hud" id="music-hud">
-    <div class="hud-brand">
-      <img src="assets/logo.png" alt="TommyFR logo" />
-      <div>
-        <span>NOW PLAYING</span>
-        <strong id="hud-title">BossMan Dlow - Motion Party</strong>
-      </div>
-    </div>
+<section id="about">
+  <h2>I make Discord servers look and work better.</h2>
+  <p>
+    Most servers are messy or overcomplicated. I keep things clean,
+    easy to use, and actually useful.
+  </p>
+</section>
 
-    <div class="hud-controls">
-      <button id="hud-prev" class="hud-btn">⏮</button>
-      <button id="hud-play" class="hud-btn hud-btn-primary">⏸</button>
-      <button id="hud-next" class="hud-btn">⏭</button>
-    </div>
+<section id="tools">
+  <h2>Tools I Use</h2>
 
-    <div class="hud-bottom">
-      <input id="hud-volume" type="range" min="0" max="1" step="0.01" value="0.50" />
-      <button id="hud-toggle" class="hud-min-btn" title="Minimize">—</button>
-    </div>
-  </aside>
+  <div class="tools">
+    <div>VS Code</div>
+    <div>GitHub</div>
+    <div>Node.js</div>
+    <div>Discord.js</div>
+    <div>Discord</div>
+  </div>
+</section>
 
-  <button id="hud-open" class="hud-open hidden">♫</button>
+<section id="links">
+  <a href="https://discord.gg/D5bRgVkEck">Join My Server</a>
+  <a href="https://portfolio.tommyfr.xyz">Portfolio</a>
+  <a href="mailto:contact@tommyfr.xyz">Contact</a>
+</section>
 
-  <header class="topbar">
-    <a class="brand" href="#top">
-      <img src="assets/logo.png" alt="TommyFR logo" />
-      <span>TOMMYFR</span>
-    </a>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#tools">Software</a>
-      <a href="#links">Links</a>
-    </nav>
-  </header>
+</div>
 
-  <main class="shell" id="top">
-    <section class="hero reveal">
-      <div class="hero-copy">
-        <span class="eyebrow">WEBSITES / DISCORD SERVERS</span>
-        <h1>I build things<br>for the web.</h1>
-        <p>
-          I code websites and make Discord servers. Clean layouts, smooth motion,
-          organized channels, polished panels, and setups that feel finished.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://discord.gg/D5bRgVkEck" target="_blank" rel="noreferrer">Join My Server</a>
-          <a class="btn btn-secondary" href="https://portfolio.tommyfr.xyz">View Portfolio</a>
-        </div>
-
-        <div class="status-grid">
-          <div class="mini-card">
-            <strong>Websites</strong>
-            <span>Landing pages, personal sites, server sites, and clean front-end builds.</span>
-          </div>
-          <div class="mini-card">
-            <strong>Discord Servers</strong>
-            <span>Channel layouts, role structure, server branding, panels, and setup.</span>
-          </div>
-          <div class="mini-card">
-            <strong>Clean Style</strong>
-            <span>Dark layouts, sharp cards, blue glow, and animated details.</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="logo-wrap">
-          <div class="logo-glow"></div>
-          <img class="hero-logo" src="assets/logo.png" alt="TommyFR logo" />
-        </div>
-        <div class="floating-card card-one">
-          <span>Building</span>
-          <strong>Websites</strong>
-          <p>Simple, clean pages that look good and load fast.</p>
-        </div>
-        <div class="floating-card card-two">
-          <span>Setting up</span>
-          <strong>Discord servers</strong>
-          <p>Organized servers with roles, channels, and a polished look.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about-grid reveal">
-      <article class="panel about-main">
-        <span class="eyebrow">ABOUT</span>
-        <h2>I make things look clean and put together.</h2>
-        <p>
-          I work on websites and Discord servers. For websites, I care about layout, animations,
-          colors, and how the page feels. For Discord servers, I care about structure, roles,
-          channels, and making the server easy to use.
-        </p>
-      </article>
-
-      <article class="panel about-side">
-        <span>WHAT I DO</span>
-        <a href="https://portfolio.tommyfr.xyz">Code Websites</a>
-        <a href="https://discord.gg/D5bRgVkEck" target="_blank" rel="noreferrer">Make Discord Servers</a>
-        <a href="https://portfolio.tommyfr.xyz">Landing Pages</a>
-        <a href="https://portfolio.tommyfr.xyz">Server Branding</a>
-      </article>
-    </section>
-
-    <section id="tools" class="tools-section reveal">
-      <div class="section-head">
-        <span class="eyebrow">SOFTWARE USED</span>
-        <h2>The stuff I use to build.</h2>
-      </div>
-
-      <div class="tools-grid">
-        <article class="panel tool-card">
-          <div class="tool-icon">VS</div>
-          <div>
-            <h3>VS Code</h3>
-            <p>Main editor for coding and organizing website files.</p>
-          </div>
-        </article>
-
-        <article class="panel tool-card">
-          <div class="tool-icon">GH</div>
-          <div>
-            <h3>GitHub</h3>
-            <p>Used for saving projects, version control, and pushing updates.</p>
-          </div>
-        </article>
-
-        <article class="panel tool-card">
-          <div class="tool-icon">VE</div>
-          <div>
-            <h3>Vercel</h3>
-            <p>Used to deploy websites and connect domains/subdomains.</p>
-          </div>
-        </article>
-
-        <article class="panel tool-card">
-          <div class="tool-icon">DC</div>
-          <div>
-            <h3>Discord</h3>
-            <p>Used for server building, channels, roles, permissions, and layout.</p>
-          </div>
-        </article>
-
-        <article class="panel tool-card">
-          <div class="tool-icon">JS</div>
-          <div>
-            <h3>JavaScript</h3>
-            <p>Used for motion, buttons, interactions, and custom website behavior.</p>
-          </div>
-        </article>
-
-        <article class="panel tool-card">
-          <div class="tool-icon">UI</div>
-          <div>
-            <h3>HTML / CSS</h3>
-            <p>Used for the page structure, styling, animations, and responsive layouts.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="links" class="link-grid reveal">
-      <a class="link-card" href="https://discord.gg/D5bRgVkEck" target="_blank" rel="noreferrer">
-        <span class="tag">MAIN LINK</span>
-        <h2>Join My Server</h2>
-        <p>Join for updates, contact, and server-related work.</p>
-      </a>
-      <a class="link-card" href="https://portfolio.tommyfr.xyz">
-        <span class="tag">WORK</span>
-        <h2>View Portfolio</h2>
-        <p>See websites, Discord servers, screenshots, and projects.</p>
-      </a>
-      <a class="link-card" href="mailto:contact@tommyfr.xyz">
-        <span class="tag">CONTACT</span>
-        <h2>Contact Me</h2>
-        <p>Reach out for a website or Discord server setup.</p>
-      </a>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
