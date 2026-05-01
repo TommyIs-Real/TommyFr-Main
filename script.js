@@ -192,3 +192,70 @@ function runTypewriter(elementId, word) {
 }
 
 runTypewriter('enterTypewriter', 'tommy.frrr');
+
+
+/* Random music + browser title typewriter */
+(function () {
+  const titleWord = 'tommy.frrr';
+  let titleIndex = 0;
+  let titleDeleting = false;
+
+  function titleLoop() {
+    document.title = titleWord.slice(0, titleIndex) || '‎';
+
+    if (!titleDeleting && titleIndex < titleWord.length) {
+      titleIndex++;
+      setTimeout(titleLoop, 160);
+      return;
+    }
+
+    if (!titleDeleting && titleIndex === titleWord.length) {
+      titleDeleting = true;
+      setTimeout(titleLoop, 1300);
+      return;
+    }
+
+    if (titleDeleting && titleIndex > 0) {
+      titleIndex--;
+      setTimeout(titleLoop, 85);
+      return;
+    }
+
+    titleDeleting = false;
+    setTimeout(titleLoop, 500);
+  }
+
+  titleLoop();
+
+  function shuffleArray(array) {
+    const copy = [...array];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof tracks === 'undefined') return;
+
+    const shuffled = shuffleArray(tracks);
+    tracks.length = 0;
+    shuffled.forEach(track => tracks.push(track));
+
+    if (typeof loadTrack === 'function') {
+      loadTrack(0, false);
+    }
+
+    const enterBtnFix = document.getElementById('enter-btn') || document.getElementById('enterBtn');
+    if (enterBtnFix) {
+      enterBtnFix.addEventListener('click', () => {
+        setTimeout(() => {
+          if (typeof loadTrack === 'function') {
+            loadTrack(0, true);
+          }
+        }, 150);
+      });
+    }
+  });
+})();
