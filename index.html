@@ -2,90 +2,209 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TommyFR</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tommy.frrr</title>
+  <meta name="description" content="tommy.frrr - Discord bots and Discord server setup." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<div id="enter">
-  <h1>TOMMYFR</h1>
-  <button onclick="enterSite()">Enter</button>
-</div>
-
-<div id="site">
-
-<header>
-  <h2>TOMMYFR</h2>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#tools">Tools</a>
-    <a href="#links">Links</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <span>DISCORD BOTS / SERVER SETUP</span>
-
-  <h1>I build Discord<br>servers & bots.</h1>
-
-  <p>
-    I make custom Discord bots and set up servers that actually feel organized.
-    Clean channels, proper roles, working systems, and everything built around how your server runs.
-  </p>
-
-  <div class="buttons">
-    <a href="https://discord.gg/D5bRgVkEck" target="_blank">Join My Server</a>
-    <a href="https://portfolio.tommyfr.xyz">View Portfolio</a>
-  </div>
-</section>
-
-<section class="features">
-  <div>
-    <h3>Server Setup</h3>
-    <p>Channels, roles, permissions, and structure done right.</p>
+  <div id="enter-screen" class="enter-screen">
+    <div class="enter-backdrop"></div>
+    <div class="enter-card">
+      <div class="enter-logo-wrap">
+        <div class="enter-logo-glow"></div>
+        <img src="assets/logo.png" alt="tommy.frrr logo" class="enter-logo" />
+      </div>
+      <span class="enter-eyebrow">TOMMYFR</span>
+      <h1>Click to enter</h1>
+      <p>Custom Discord bots and server systems.</p>
+      <button id="enter-btn" class="enter-btn">Enter</button>
+    </div>
   </div>
 
-  <div>
-    <h3>Custom Bots</h3>
-    <p>Tickets, moderation, panels, and useful systems.</p>
-  </div>
+  <div class="noise"></div>
+  <div class="bg-grid"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <div class="orb orb-c"></div>
 
-  <div>
-    <h3>Clean Design</h3>
-    <p>No messy layouts. Everything simple and organized.</p>
-  </div>
-</section>
+  <audio id="site-audio"></audio>
 
-<section id="about">
-  <h2>I make Discord servers look and work better.</h2>
-  <p>
-    Most servers are messy or overcomplicated. I keep things clean,
-    easy to use, and actually useful.
-  </p>
-</section>
+  <aside class="music-hud" id="music-hud">
+    <div class="hud-brand">
+      <img src="assets/logo.png" alt="tommy.frrr logo" />
+      <div>
+        <span>NOW PLAYING</span>
+        <strong id="hud-title">BossMan Dlow - Motion Party</strong>
+      </div>
+    </div>
 
-<section id="tools">
-  <h2>Tools I Use</h2>
+    <div class="hud-controls">
+      <button id="hud-prev" class="hud-btn">⏮</button>
+      <button id="hud-play" class="hud-btn hud-btn-primary">⏸</button>
+      <button id="hud-next" class="hud-btn">⏭</button>
+    </div>
 
-  <div class="tools">
-    <div>VS Code</div>
-    <div>GitHub</div>
-    <div>Node.js</div>
-    <div>Discord.js</div>
-    <div>Discord</div>
-  </div>
-</section>
+    <div class="hud-bottom">
+      <input id="hud-volume" type="range" min="0" max="1" step="0.01" value="0.50" />
+      <button id="hud-toggle" class="hud-min-btn" title="Minimize">—</button>
+    </div>
+  </aside>
 
-<section id="links">
-  <a href="https://discord.gg/D5bRgVkEck">Join My Server</a>
-  <a href="https://portfolio.tommyfr.xyz">Portfolio</a>
-  <a href="mailto:contact@tommyfr.xyz">Contact</a>
-</section>
+  <button id="hud-open" class="hud-open hidden">♫</button>
 
-</div>
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <img src="assets/logo.png" alt="tommy.frrr logo" />
+      <span id="typewriter" class="typewriter">tommy.frrr</span>
+    </a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#systems">Systems</a>
+      <a href="#stats">Stats</a>
+      <a href="#links">Links</a>
+    </nav>
+  </header>
 
-<script src="script.js"></script>
+  <main class="shell" id="top">
+    <section class="hero reveal">
+      <div class="hero-copy">
+        <span class="eyebrow">DISCORD BOTS / SERVER SETUP</span>
+        <h1>I build Discord<br>bots & servers.</h1>
+        <p>
+          I make custom Discord bots and set up servers that are clean, organized, and easy to use.
+          Roles, channels, panels, permissions, and systems built around how your server works.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://discord.gg/D5bRgVkEck" target="_blank" rel="noreferrer">Join My Server</a>
+          <a class="btn btn-secondary" href="https://portfolio.tommyfr.xyz">View Portfolio</a>
+        </div>
+
+        <div class="status-grid">
+          <div class="mini-card">
+            <strong>Ticket Systems</strong>
+            <span>Panels, categories, claims, staff tools, transcripts, and clean support flows.</span>
+          </div>
+          <div class="mini-card">
+            <strong>Moderation Tools</strong>
+            <span>Warnings, bans, timeouts, logs, permissions, and organized staff commands.</span>
+          </div>
+          <div class="mini-card">
+            <strong>Server Setup</strong>
+            <span>Channels, roles, permissions, categories, layouts, and clean structure.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="logo-wrap">
+          <div class="logo-glow"></div>
+          <img class="hero-logo" src="assets/logo.png" alt="tommy.frrr logo" />
+        </div>
+        <div class="floating-card card-one">
+          <span>Main work</span>
+          <strong>Discord bots</strong>
+          <p>Custom systems, commands, panels, and automations built for real server use.</p>
+        </div>
+        <div class="floating-card card-two">
+          <span>Focus</span>
+          <strong>Discord servers</strong>
+          <p>Roles, channels, permissions, and clean server layouts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-grid reveal">
+      <article class="panel about-main">
+        <span class="eyebrow">ABOUT</span>
+        <h2>I make Discord servers feel more professional.</h2>
+        <p>
+          My focus is building custom Discord bots and systems that are easy to use, organized, and clean.
+          I like polished panels, smooth interactions, clear staff tools, and setups that fit the server instead of feeling copied.
+        </p>
+      </article>
+
+      <article class="panel about-side">
+        <span>WHAT I BUILD</span>
+        <a href="https://portfolio.tommyfr.xyz">Ticket Systems</a>
+        <a href="https://portfolio.tommyfr.xyz">Moderation Systems</a>
+        <a href="https://portfolio.tommyfr.xyz">Application Systems</a>
+        <a href="https://portfolio.tommyfr.xyz">Server Setup</a>
+      </article>
+    </section>
+
+    <section id="systems" class="systems-section reveal">
+      <div class="section-head">
+        <span class="eyebrow">SYSTEMS</span>
+        <h2>Stuff I usually build into bots.</h2>
+      </div>
+
+      <div class="systems-grid">
+        <article class="panel system-card">
+          <h3>Support Panels</h3>
+          <p>Clean menus, buttons, ticket categories, staff actions, and polished embeds.</p>
+        </article>
+
+        <article class="panel system-card">
+          <h3>Staff Commands</h3>
+          <p>Promotions, demotions, leave of absence, moderation logs, and management workflows.</p>
+        </article>
+
+        <article class="panel system-card">
+          <h3>Server Setup</h3>
+          <p>Auto responses, logs, role checks, command permissions, and systems that save time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="stats" class="stats-section reveal">
+      <div class="section-head">
+        <span class="eyebrow">STATS</span>
+        <h2>Simple focus. Better result.</h2>
+      </div>
+
+      <div class="stats-grid">
+        <div class="panel stat-card">
+          <strong>1</strong>
+          <span>Main Service</span>
+          <p>Custom Discord bot development.</p>
+        </div>
+        <div class="panel stat-card">
+          <strong>3</strong>
+          <span>Main Areas</span>
+          <p>Tickets, moderation, and server automation.</p>
+        </div>
+        <div class="panel stat-card">
+          <strong>100%</strong>
+          <span>Custom Setup</span>
+          <p>Built around your server, not a random template.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="links" class="link-grid reveal">
+      <a class="link-card" href="https://discord.gg/D5bRgVkEck" target="_blank" rel="noreferrer">
+        <span class="tag">MAIN LINK</span>
+        <h2>Join My Server</h2>
+        <p>Join the server for updates, contact, and community.</p>
+      </a>
+      <a class="link-card" href="https://portfolio.tommyfr.xyz">
+        <span class="tag">WORK</span>
+        <h2>View Portfolio</h2>
+        <p>See bots, server setups, screenshots, and projects.</p>
+      </a>
+      <a class="link-card" href="mailto:contact@tommyfr.xyz">
+        <span class="tag">CONTACT</span>
+        <h2>Contact Me</h2>
+        <p>Reach out for a custom bot or Discord server setup.</p>
+      </a>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
