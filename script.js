@@ -154,3 +154,41 @@ if (typewriter) {
 
   typeLoop();
 }
+
+
+function runTypewriter(elementId, word) {
+  const el = document.getElementById(elementId);
+  if (!el) return;
+
+  let i = 0;
+  let deleting = false;
+
+  function loop() {
+    el.textContent = word.slice(0, i);
+
+    if (!deleting && i < word.length) {
+      i++;
+      setTimeout(loop, 115);
+      return;
+    }
+
+    if (!deleting && i === word.length) {
+      deleting = true;
+      setTimeout(loop, 1200);
+      return;
+    }
+
+    if (deleting && i > 0) {
+      i--;
+      setTimeout(loop, 70);
+      return;
+    }
+
+    deleting = false;
+    setTimeout(loop, 450);
+  }
+
+  loop();
+}
+
+runTypewriter('enterTypewriter', 'tommy.frrr');

@@ -504,3 +504,37 @@ button, input { font: inherit; }
   0%, 45% { opacity: 1; }
   46%, 100% { opacity: 0; }
 }
+
+
+/* removed stats */
+.stats-section {
+  display: none !important;
+}
+
+/* enter screen name row */
+.enter-name {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.enter-name img {
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+}
+
+.enter-typewriter {
+  min-width: 96px;
+  text-align: left;
+}
+
+/* slightly less stiff wording/layout feel */
+.hero p,
+.about-main p,
+.mini-card span,
+.link-card p {
+  font-weight: 500;
+}
